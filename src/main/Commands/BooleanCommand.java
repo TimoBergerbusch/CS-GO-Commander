@@ -1,3 +1,5 @@
+package main.Commands;
+
 public class BooleanCommand extends Command<Boolean> {
 
 
@@ -7,6 +9,11 @@ public class BooleanCommand extends Command<Boolean> {
 
     @Override
     public String getCommand() {
-        return this.key + " " + (this.value ? 1 : 0)+";";
+        return this.key + " " + (this.value ? 1 : 0) + ";";
+    }
+
+    @Override
+    public String toString() {
+        return "Boolean"+super.toString();
     }
 }

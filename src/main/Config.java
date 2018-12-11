@@ -1,15 +1,29 @@
+package main;
+
+import main.Commands.*;
+import main.WeaponTypes.PrimaryWeaponType;
+import main.WeaponTypes.SecondaryWeaponType;
+import main.WeaponTypes.UtilityType;
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Config {
 
     private ArrayList<Command> commands;
 
+    @NotNull
+    @Contract(" -> new")
     public static Config getDefaultConfig() {
         ArrayList<Command> defaultCommands = new ArrayList<>();
         defaultCommands.add(new IntegerCommand("mp_maxrounds", 50));
@@ -30,7 +44,7 @@ public class Config {
         return new Config(defaultCommands);
     }
 
-    public static Config readConfigFile(File configFile) {
+    public static Config readConfigFile(@NotNull File configFile) {
         try {
             String content = Config.readFile(configFile.getPath(), StandardCharsets.UTF_8);
             String[] stringCommands = content.split(";");
@@ -38,22 +52,59 @@ public class Config {
 
             for (int i = 0; i < stringCommands.length; i++) {
                 stringCommands[i] = stringCommands[i].trim();
-                String[] commandparts = stringCommands[i].split(" ");
 
-                if (commandparts.length >= 3)
-                    System.err.println("Unexpected number of items for command(" + stringCommands[i] + ") with parts " + commandparts.length);
-                else if (commandparts.length == 1)
-                    commands.add(new SingleCommand(commandparts[0]));
-                else if (commandparts.length == 2) {
-                    // TODO:
-                }
-
+                commands.add(readCommand(stringCommands[i]));
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
 
         return null;
+    }
+
+    public static Command readCommand(@NotNull String row) {
+        String[] commandparts = row.split(" ");
+        Command cmd = null;
+
+        String key = commandparts[0];
+        key = key.replace(";", "");
+
+        if (commandparts.length >= 3)
+            System.err.println("Unexpected number of items for command(" + row + ") with parts " + commandparts.length);
+        else if (commandparts.length == 1)
+            cmd = new SingleCommand(key);
+        else if (commandparts.length == 2) {
+            String value = commandparts[1];
+            value = value.replace(";", "");
+            if (Arrays.asList(Command.booleanCommands).contains(key)) {
+                if (value.equals("0") || value.equals("0"))
+                    cmd = new BooleanCommand(key, false);
+                else
+                    cmd = new BooleanCommand(key, true);
+            } else {
+                int intValue;
+                try {
+                    intValue = Integer.parseInt(value);
+                    cmd = new IntegerCommand(key, intValue);
+                } catch (Exception e) {
+
+                    value = value.replace("weapon_", "");
+
+                    PrimaryWeaponType pwt = PrimaryWeaponType.contains(value);
+                    SecondaryWeaponType swt = SecondaryWeaponType.contains(value);
+                    UtilityType ut = UtilityType.contains(value);
+                    if (pwt != null) {
+                        cmd = new PrimaryWeaponCommand(key, pwt);
+                    } else if (swt != null) {
+                        cmd = new SecondaryWeaponCommand(key, swt);
+                    } else if (ut != null) {
+                        // TODO
+                    } else
+                        cmd = new StringCommand(key, value);
+                }
+            }
+        }
+        return cmd;
     }
 
     static String readFile(String path, Charset encoding) throws IOException {

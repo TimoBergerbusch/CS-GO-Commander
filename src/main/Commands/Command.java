@@ -1,7 +1,11 @@
+package main.Commands;
+
 public abstract class Command<T> {
 
-    public static String[] booleanCommands = new String[]{
-            "mp_free_armor", "sv_allow_votes", "mp_overtime_enable",
+    public static StringCommand ErrorCommand = new SingleCommand("ERROR");
+
+    public static String[] booleanCommands = {
+            "mp_free_armor", "sv_allow_votes", "mp_overtime_enable", "mp_freezetime",
             "mp_match_can_clinch", "mp_halftime", "mp_damage_headshot_only",
             "mp_weapons_allow_map_placed", "mp_death_drop_gun", "mp_ignore_round_win_conditions"
     };
@@ -32,5 +36,10 @@ public abstract class Command<T> {
 
     public String getCommand() {
         return this.key + " " + this.value + ";";
+    }
+
+    @Override
+    public String toString() {
+        return "Command:\t key = " + key + "\t value = " + value;
     }
 }
