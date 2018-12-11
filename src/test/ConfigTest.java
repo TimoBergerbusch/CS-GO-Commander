@@ -4,10 +4,12 @@ import main.Config;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.io.File;
+
 public class ConfigTest {
 
     @Test
-    public void readConfigFileTest(){
+    public void readConfigFileTest() {
         String input = "bot_kick;\n" +
                 "mp_freezetime 1;\n" +
                 "mp_round_restart_delay 5;\n" +
@@ -27,8 +29,8 @@ public class ConfigTest {
                 "mp_halftime 1;\n" +
                 "mp_halftime_duration 8;\n" +
                 "mp_warmup_end;\n" +
-                "mp_restartgame 3;";
-        Assertions.assertEquals(input, input);
+                "mp_restartgame 3;\n";
+        Assertions.assertEquals(input, Config.readConfigFile(new File("H:\\Dokumente\\GitHub\\CS-GO-Commander\\commandfiles\\aim_map_exec.cfg")).toString());
     }
 
     @Test
@@ -36,7 +38,7 @@ public class ConfigTest {
         Assertions.assertEquals("SingleStringCommand:\t key = bot_kick\t value = ", Config.readCommand("bot_kick;").toString());
         Assertions.assertEquals("SingleStringCommand:\t key = mp_warmup_end\t value = ", Config.readCommand("mp_warmup_end;").toString());
     }
-    
+
     @Test
     public void parseIntegerCommandsTest() {
         Assertions.assertEquals("IntegerCommand:\t key = mp_round_restart_delay\t value = 5", Config.readCommand("mp_round_restart_delay 5;").toString());

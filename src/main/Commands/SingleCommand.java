@@ -8,6 +8,11 @@ public class SingleCommand extends StringCommand {
 
     @Override
     public String toString() {
-        return "Single"+super.toString();
+        return "Single" + super.toString();
+    }
+
+    @Override
+    public String getCommand() {
+        return key + ";";
     }
 }

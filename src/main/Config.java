@@ -45,10 +45,11 @@ public class Config {
     }
 
     public static Config readConfigFile(@NotNull File configFile) {
+        ArrayList<Command> commands = null;
         try {
             String content = Config.readFile(configFile.getPath(), StandardCharsets.UTF_8);
             String[] stringCommands = content.split(";");
-            ArrayList<Command> commands = new ArrayList<>(stringCommands.length);
+            commands = new ArrayList<>(stringCommands.length);
 
             for (int i = 0; i < stringCommands.length; i++) {
                 stringCommands[i] = stringCommands[i].trim();
@@ -59,7 +60,7 @@ public class Config {
             e.printStackTrace();
         }
 
-        return null;
+        return new Config(commands);
     }
 
     public static Command readCommand(@NotNull String row) {
@@ -107,6 +108,7 @@ public class Config {
         return cmd;
     }
 
+    @NotNull
     static String readFile(String path, Charset encoding) throws IOException {
         byte[] encoded = Files.readAllBytes(Paths.get(path));
         return new String(encoded, encoding);
