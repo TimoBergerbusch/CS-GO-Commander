@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4992857a-0858-49d4-a119-6aa3ff9a177c" name="Default Changelist" comment="" />
+    <list default="true" id="4992857a-0858-49d4-a119-6aa3ff9a177c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/ConfigTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/csgo-commander v0.1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/csgo-commander v0.1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BooleanCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Commands/BooleanCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Commands/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IntegerCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Commands/IntegerCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PrimaryWeaponCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Commands/PrimaryWeaponCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PrimaryWeaponType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/WeaponTypes/PrimaryWeaponType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SecondaryWeaponCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Commands/SecondaryWeaponCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SecondaryWeaponType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/WeaponTypes/SecondaryWeaponType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SingleCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Commands/SingleCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StringCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Commands/StringCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UtilityType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/WeaponTypes/UtilityType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/View.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,51 +85,97 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="1827478093">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="cfg" value="7" />
+          <entry key="iml" value="1" />
+          <entry key="java" value="31" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="IDEA_MODULE" value="1" />
+          <entry key="JAVA" value="31" />
+          <entry key="PLAIN_TEXT" value="7" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="3261" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="3261" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/ConfigTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="141" selection-start-line="6" selection-start-column="141" selection-end-line="6" selection-end-column="141" />
+            <state relative-caret-position="187">
+              <caret line="38" column="4" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="4" />
+              <folding>
+                <element signature="method#readConfigFileTest#0;class#ConfigTest#0" />
+                <element signature="method#parseSingleCommandsTest#0;class#ConfigTest#0" />
+                <element signature="method#parseIntegerCommandsTest#0;class#ConfigTest#0" />
+                <element signature="method#parseBooleanCommandsTest#0;class#ConfigTest#0" />
+                <element signature="method#parseWeaponCommandsTest#0;class#ConfigTest#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Config.java">
+        <entry file="file://$PROJECT_DIR$/src/main/Config.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="24" column="12" lean-forward="true" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
+              <folding>
+                <element signature="method#getDefaultConfig#0;class#Config#0" />
+                <element signature="method#readConfigFile#0;class#Config#0" />
+                <element signature="method#readFile#0;class#Config#0" />
+                <element signature="e#4554#4555#0" expanded="true" />
+                <element signature="e#4594#4595#0" expanded="true" />
+                <element signature="method#toString#0;class#Config#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/WeaponTypes/SecondaryWeaponType.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
-              <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+              <caret line="6" column="52" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#getDefaultConfig#0;class#Config#0" />
+                <element signature="e#613#614#0" expanded="true" />
+                <element signature="e#655#656#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SingleCommand.java">
+        <entry file="file://$PROJECT_DIR$/src/main/WeaponTypes/UtilityType.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+            <state relative-caret-position="306">
+              <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
               <folding>
-                <element signature="e#89#90#0" expanded="true" />
-                <element signature="e#119#120#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Command.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
-              <folding>
-                <element signature="method#Command#0;class#Command#0" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#609#610#0" expanded="true" />
+                <element signature="e#641#642#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -121,21 +184,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/commandfiles/aim_map_exec_deagle_HSonly.cfg">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/BooleanCommand.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
-              <folding>
-                <element signature="e#191#192#0" expanded="true" />
-                <element signature="e#255#256#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="323">
+              <caret line="19" selection-start-line="19" selection-end-line="19" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -153,17 +203,21 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>False</find>
+      <find>commandparts[0]</find>
     </findStrings>
     <replaceStrings>
       <replace>false</replace>
+      <replace>key</replace>
     </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/StringCommand.java" />
         <option value="$PROJECT_DIR$/src/WeaponType.java" />
-        <option value="$PROJECT_DIR$/src/IntegerCommand.java" />
         <option value="$PROJECT_DIR$/src/SecondaryWeaponCommand.java" />
         <option value="$PROJECT_DIR$/src/UtilityType.java" />
         <option value="$PROJECT_DIR$/src/PrimaryWeaponCommand.java" />
@@ -172,8 +226,25 @@
         <option value="$PROJECT_DIR$/src/BooleanCommand.java" />
         <option value="$PROJECT_DIR$/src/View.java" />
         <option value="$PROJECT_DIR$/src/SingleCommand.java" />
-        <option value="$PROJECT_DIR$/src/Config.java" />
         <option value="$PROJECT_DIR$/src/Command.java" />
+        <option value="$PROJECT_DIR$/src/IntegerCommand.java" />
+        <option value="$PROJECT_DIR$/src/Commands/SecondaryWeaponType.java" />
+        <option value="$PROJECT_DIR$/src/ConfigTest.java" />
+        <option value="$PROJECT_DIR$/test/ConfigTest.java" />
+        <option value="$PROJECT_DIR$/src/Config.java" />
+        <option value="$PROJECT_DIR$/src/main/Commands/SingleCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/Commands/BooleanCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/Commands/IntegerCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/Commands/PrimaryWeaponCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/Commands/SecondaryWeaponCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/Commands/StringCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/Commands/Command.java" />
+        <option value="$PROJECT_DIR$/src/main/WeaponTypes/Weapontype.java" />
+        <option value="$PROJECT_DIR$/src/main/WeaponTypes/PrimaryWeaponType.java" />
+        <option value="$PROJECT_DIR$/src/main/WeaponTypes/UtilityType.java" />
+        <option value="$PROJECT_DIR$/src/main/Config.java" />
+        <option value="$PROJECT_DIR$/src/main/WeaponTypes/SecondaryWeaponType.java" />
+        <option value="$PROJECT_DIR$/src/test/ConfigTest.java" />
       </list>
     </option>
   </component>
@@ -183,7 +254,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1620" />
@@ -200,18 +271,37 @@
         <subPane>
           <expand>
             <path>
-              <item name="csgo-commander v0.1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="csgo-commander v0.1" type="462c0819:PsiDirectoryNode" />
+              <item name="CS-GO-Commander" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CS-GO-Commander" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="csgo-commander v0.1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="csgo-commander v0.1" type="462c0819:PsiDirectoryNode" />
+              <item name="CS-GO-Commander" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CS-GO-Commander" type="462c0819:PsiDirectoryNode" />
               <item name="commandfiles" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="csgo-commander v0.1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="csgo-commander v0.1" type="462c0819:PsiDirectoryNode" />
+              <item name="CS-GO-Commander" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CS-GO-Commander" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CS-GO-Commander" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CS-GO-Commander" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CS-GO-Commander" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CS-GO-Commander" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="WeaponTypes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CS-GO-Commander" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CS-GO-Commander" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -220,9 +310,12 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544559282328" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544565822947" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -234,6 +327,11 @@
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="H:\Dokumente\GitHub\CS-GO-Commander\src" />
+      <recent name="H:\Dokumente\GitHub\CS-GO-Commander\test" />
+      <recent name="H:\Dokumente\GitHub\CS-GO-Commander" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -248,17 +346,99 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="View" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="View" />
+  <component name="RunManager" selected="JUnit.ConfigTest (1)">
+    <configuration name="ConfigTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="csgo-commander v0.1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.ConfigTest" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ConfigTest.parseCommandsTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="csgo-commander v0.1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.ConfigTest" />
+      <option name="METHOD_NAME" value="parseCommandsTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConfigTest.parseSingleCommandsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="csgo-commander v0.1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.ConfigTest" />
+      <option name="METHOD_NAME" value="parseSingleCommandsTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConfigTest.parseWeaponCommandsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="csgo-commander v0.1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.ConfigTest" />
+      <option name="METHOD_NAME" value="parseWeaponCommandsTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConfigTest.readConfigFileTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="csgo-commander v0.1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.ConfigTest" />
+      <option name="METHOD_NAME" value="readConfigFileTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.ConfigTest (1)" />
+      <item itemvalue="JUnit.ConfigTest.parseCommandsTest (1)" />
+      <item itemvalue="JUnit.ConfigTest.parseSingleCommandsTest" />
+      <item itemvalue="JUnit.ConfigTest.parseWeaponCommandsTest" />
+      <item itemvalue="JUnit.ConfigTest.readConfigFileTest" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.View" />
+        <item itemvalue="JUnit.ConfigTest (1)" />
+        <item itemvalue="JUnit.ConfigTest.readConfigFileTest" />
+        <item itemvalue="JUnit.ConfigTest.parseWeaponCommandsTest" />
+        <item itemvalue="JUnit.ConfigTest.parseCommandsTest (1)" />
+        <item itemvalue="JUnit.ConfigTest.parseSingleCommandsTest" />
       </list>
     </recent_temporary>
   </component>
@@ -274,16 +454,50 @@
       <updated>1544033086087</updated>
       <workItem from="1544033091525" duration="3290000" />
       <workItem from="1544558484047" duration="932000" />
+      <workItem from="1544559832228" duration="5924000" />
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="ConfigTest_parseWeaponCommandsTest - 2018.12.11 at 22h 52m 48s.xml">
+      <configuration name="ConfigTest.parseWeaponCommandsTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ConfigTest_parseWeaponCommandsTest - 2018.12.11 at 22h 55m 58s.xml">
+      <configuration name="ConfigTest.parseWeaponCommandsTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ConfigTest_parseWeaponCommandsTest - 2018.12.11 at 22h 57m 00s.xml">
+      <configuration name="ConfigTest.parseWeaponCommandsTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ConfigTest_parseWeaponCommandsTest - 2018.12.11 at 22h 58m 24s.xml">
+      <configuration name="ConfigTest.parseWeaponCommandsTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ConfigTest_parseWeaponCommandsTest - 2018.12.11 at 22h 58m 55s.xml">
+      <configuration name="ConfigTest.parseWeaponCommandsTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ConfigTest_parseWeaponCommandsTest - 2018.12.11 at 22h 59m 34s.xml">
+      <configuration name="ConfigTest.parseWeaponCommandsTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ConfigTest_parseWeaponCommandsTest - 2018.12.11 at 22h 59m 54s.xml">
+      <configuration name="ConfigTest.parseWeaponCommandsTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ConfigTest_readConfigFileTest - 2018.12.11 at 23h 02m 17s.xml">
+      <configuration name="ConfigTest.readConfigFileTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ConfigTest_readConfigFileTest - 2018.12.11 at 23h 02m 39s.xml">
+      <configuration name="ConfigTest.readConfigFileTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ConfigTest_(1) - 2018.12.11 at 23h 03m 25s.xml">
+      <configuration name="ConfigTest (1)" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4222000" />
+    <option name="totallyTimeSpent" value="10146000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1620" height="920" extended-state="1" />
+    <frame x="-8" y="-8" width="1620" height="920" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25320512" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13910256" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -292,17 +506,17 @@
       <window_info id="Learn" order="6" />
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.329718" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.27099237" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32951653" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3994911" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32951653" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.329718" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32951653" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -324,137 +538,201 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/IntegerCommand.java">
+    <entry file="jar://C:/Program Files/Java/jdk-9.0.4/lib/src.zip!/java.base/java/nio/file/Files.java" />
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/lang/String.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
-          <folding>
-            <element signature="e#108#109#0" expanded="true" />
-            <element signature="e#141#142#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="167">
+          <caret line="2140" column="18" selection-start-line="2140" selection-start-column="18" selection-end-line="2140" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/StringCommand.java">
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/lang/reflect/Method.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="26" lean-forward="true" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-          <folding>
-            <element signature="e#104#105#0" expanded="true" />
-            <element signature="e#137#138#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="159">
+          <caret line="565" selection-start-line="565" selection-end-line="565" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SecondaryWeaponCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
-          <folding>
-            <element signature="e#148#149#0" expanded="true" />
-            <element signature="e#181#182#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PrimaryWeaponCommand.java">
+    <entry file="file://$PROJECT_DIR$/src/main/View.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
-          <folding>
-            <element signature="e#129#130#0" expanded="true" />
-            <element signature="e#149#150#0" expanded="true" />
-          </folding>
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PrimaryWeaponType.java">
+    <entry file="file://$PROJECT_DIR$/csgo-commander v0.1.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Commands/BooleanCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="31" selection-start-column="31" selection-end-column="31" />
+        <state relative-caret-position="238">
+          <caret line="16" column="23" lean-forward="true" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="42" />
           <folding>
-            <element signature="e#202#203#0" expanded="true" />
-            <element signature="e#234#235#0" expanded="true" />
+            <element signature="e#215#216#0" expanded="true" />
+            <element signature="e#279#280#0" expanded="true" />
+            <element signature="e#313#314#0" expanded="true" />
+            <element signature="e#394#395#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SecondaryWeaponType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-          <folding>
-            <element signature="e#204#205#0" expanded="true" />
-            <element signature="e#236#237#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UtilityType.java">
+    <entry file="file://$PROJECT_DIR$/src/main/Commands/IntegerCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="11" selection-end-column="5" />
+          <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
           <folding>
-            <element signature="e#255#256#0" expanded="true" />
-            <element signature="e#281#282#0" expanded="true" />
+            <element signature="e#211#212#0" expanded="true" />
+            <element signature="e#260#261#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-9.0.4/lib/src.zip!/java.base/java/nio/file/Files.java" />
-    <entry file="file://$PROJECT_DIR$/src/View.java">
+    <entry file="file://$PROJECT_DIR$/src/main/Commands/PrimaryWeaponCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="141" selection-start-line="6" selection-start-column="141" selection-end-line="6" selection-end-column="141" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SingleCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+        <state relative-caret-position="170">
+          <caret line="12" column="48" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
           <folding>
-            <element signature="e#89#90#0" expanded="true" />
-            <element signature="e#119#120#0" expanded="true" />
+            <element signature="e#292#293#0" expanded="true" />
+            <element signature="e#373#374#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BooleanCommand.java">
+    <entry file="file://$PROJECT_DIR$/src/main/Commands/SecondaryWeaponCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
+          <folding>
+            <element signature="e#301#302#0" expanded="true" />
+            <element signature="e#382#383#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Commands/SingleCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
+          <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
           <folding>
-            <element signature="e#191#192#0" expanded="true" />
-            <element signature="e#255#256#0" expanded="true" />
+            <element signature="e#193#194#0" expanded="true" />
+            <element signature="e#274#275#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Config.java">
+    <entry file="file://$PROJECT_DIR$/src/main/Commands/StringCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+        <state relative-caret-position="102">
+          <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getDefaultConfig#0;class#Config#0" />
+            <element signature="e#193#194#0" expanded="true" />
+            <element signature="e#243#244#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commandfiles/aim_map_exec_deagle.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" selection-start-line="9" selection-end-line="9" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/commandfiles/aim_map_exec_deagle_HSonly.cfg">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="13" />
+        <state relative-caret-position="323">
+          <caret line="19" selection-start-line="19" selection-end-line="19" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Command.java">
+    <entry file="file://$PROJECT_DIR$/src/main/WeaponTypes/Weapontype.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
+          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Commands/Command.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="42" column="26" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
           <folding>
             <element signature="method#Command#0;class#Command#0" />
+            <element signature="e#967#968#0" expanded="true" />
+            <element signature="e#1041#1042#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/WeaponTypes/UtilityType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#609#610#0" expanded="true" />
+            <element signature="e#641#642#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/WeaponTypes/PrimaryWeaponType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="37" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/WeaponTypes/SecondaryWeaponType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="6" column="52" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#613#614#0" expanded="true" />
+            <element signature="e#655#656#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commandfiles/aim_map_exec.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="20" selection-end-line="19" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Config.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="24" column="12" lean-forward="true" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
+          <folding>
+            <element signature="method#getDefaultConfig#0;class#Config#0" />
+            <element signature="method#readConfigFile#0;class#Config#0" />
+            <element signature="method#readFile#0;class#Config#0" />
+            <element signature="e#4554#4555#0" expanded="true" />
+            <element signature="e#4594#4595#0" expanded="true" />
+            <element signature="method#toString#0;class#Config#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/ConfigTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="38" column="4" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="4" />
+          <folding>
+            <element signature="method#readConfigFileTest#0;class#ConfigTest#0" />
+            <element signature="method#parseSingleCommandsTest#0;class#ConfigTest#0" />
+            <element signature="method#parseIntegerCommandsTest#0;class#ConfigTest#0" />
+            <element signature="method#parseBooleanCommandsTest#0;class#ConfigTest#0" />
+            <element signature="method#parseWeaponCommandsTest#0;class#ConfigTest#0" />
           </folding>
         </state>
       </provider>
