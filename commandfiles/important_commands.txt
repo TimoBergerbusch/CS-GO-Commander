@@ -1,0 +1,48 @@
+######################
+### META PARAMETER ###
+######################
+# max round
+	mp_maxrounds 50;
+# delay at beginning
+	mp_round_restart_delay 5;
+# dont drop guns
+	mp_death_drop_gun 0;
+# ignore time and bomb
+	mp_ignore_round_win_conditions 1;
+# no halftime
+	mp_halftime 0;
+# end warmup
+	mp_warmup_end;
+# restart game (seconds)
+	mp_restartgame 3;
+# no restriction of side
+	mp_limitteams 5;
+# no balancing
+	sv_teambalance 0;
+# no weapons on the map
+	mp_weapons_allow_map_placed 0;
+
+########################
+### SPECIAL GAMEMODE ###
+########################
+# free for all
+	mp_teammembers_are_enemies 1;
+# HS only
+	mp_damage_headshot_only 1
+	
+###############
+### UTILITY ###
+###############
+# armor
+	mp_free_armor 1;
+# primiary weapon
+	mp_t_default_primary __;
+	mp_ct_default_primary __;
+# secondary weapon
+	mp_t_default_secondary __;
+	mp_ct_default_secondary __;
+# strange weapon names: weapon_ +
+	usp_silencer; cz75a; galilar; ssg08; sg556; m4a1_silencer
+# utility name: weapon_ + 
+	hegrenade; smokegrenade; incgrenade; molotov; taser
+	
