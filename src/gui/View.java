@@ -1,6 +1,7 @@
 package gui;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 
 public class View extends JFrame {
@@ -10,8 +11,8 @@ public class View extends JFrame {
     private JButton btn_copyToClipboard;
     private JButton btn_saveCommandsToFile;
     private JPanel rootPanel;
-    private JTabbedPane tab_basicCommands;
     private JPanel tab_weapons;
+
     private JTextField tf_halftime_duration;
     private JComboBox cb_ammo_type;
     private JCheckBox ch_warmup;
@@ -43,16 +44,50 @@ public class View extends JFrame {
     private JCheckBox ch_molotov_t;
     private JCheckBox ch_smoke_grenade_ct;
     private JCheckBox ch_smoke_grenade_t;
+    private JPanel tab_basic_commands;
+    private JPanel tab_others;
+    private JButton btn_add_command;
+    private JButton btn_delete_other_command;
+    private JScrollPane jScrollPane;
     private JCheckBox checkBox1;
+    private JTable other_commands_table;
 
-    public View() {
+    private DefaultTableModel tableModel;
+
+    private static View view;
+
+    public static View getView() {
+        if (view == null)
+            view = new View();
+        return view;
+    }
+
+    private View() {
+        this.setFrameBasics();
+        this.setTableHeader();
+    }
+
+    private void setFrameBasics() {
         this.add(rootPanel);
         this.setSize(new Dimension(700, 400));
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
     }
 
-    private void createUIComponents() {
-        // TODO: place custom component creation code here
+    private void setTableHeader() {
+        String[] headerNames = new String[]{"Command", "Attribute(s)"};
+        this.tableModel = new DefaultTableModel();
+        this.tableModel.setColumnIdentifiers(headerNames);
+        this.other_commands_table.setModel(this.tableModel);
+    }
+
+    // GETTER AND SETTER
+
+    public void setTf_halftime_duration(Object value) {
+        this.tf_halftime_duration.setText(value.toString());
+    }
+
+    public void setCb_ammo_type(String value){
+        this.cb_ammo_type.setSelectedItem(value);
     }
 }

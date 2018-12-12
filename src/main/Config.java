@@ -25,6 +25,8 @@ public class Config {
     public static Config getDefaultConfig() {
         ArrayList<Command> defaultCommands = new ArrayList<>();
         defaultCommands.add(new IntegerCommand("mp_maxrounds", 50));
+        defaultCommands.add(new IntegerCommand("sv_infinite_ammo", 1));
+        defaultCommands.add(new IntegerCommand("mp_halftime_duration", 50));
         defaultCommands.add(new BooleanCommand("mp_death_drop_gun", false));
         defaultCommands.add(new BooleanCommand("mp_halftime", false));
         defaultCommands.add(new IntegerCommand("mp_limitteams", 3));
@@ -102,13 +104,21 @@ public class Config {
                         cmd = new SecondaryWeaponCommand(key, swt);
                     } else //noinspection StatementWithEmptyBody
                         if (ut != null) {
-                        // TODO
-                    } else
-                        cmd = new StringCommand(key, value);
+                            // TODO
+                        } else
+                            cmd = new StringCommand(key, value);
                 }
             }
         }
         return cmd;
+    }
+
+    public Command getCommand(String key) {
+        for (int i = 0; i < commands.size(); i++) {
+            if (commands.get(i).getKey().equalsIgnoreCase(key))
+                return commands.get(i);
+        }
+        return null;
     }
 
     @NotNull
