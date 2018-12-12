@@ -12,10 +12,13 @@ public class View extends JFrame {
     private JPanel rootPanel;
     private JTabbedPane tab_basicCommands;
     private JPanel tab_weapons;
+    private JTextField textField1;
+    private JComboBox comboBox1;
+    private JCheckBox checkBox1;
 
     public View() {
         this.add(rootPanel);
-        this.setSize(new Dimension(600, 400));
+        this.setSize(new Dimension(700, 400));
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
     }
