@@ -1,6 +1,5 @@
 package gui;
 
-import main.Commands.IntegerCommand;
 import main.Config;
 
 public class GUILoader {
@@ -8,21 +7,12 @@ public class GUILoader {
     public static void loadConfig(Config config) {
         View view = View.getView();
 
-        view.setTf_halftime_duration(config.getCommand("mp_halftime_duration").getValue());
-        view.setCb_ammo_type(getAmmoType(((IntegerCommand) config.getCommand("sv_infinite_ammo")).getValue()));
-
-    }
-
-    private static String getAmmoType(int value) {
-        switch (value) {
-            case 2:
-                return "+reload";
-            case 1:
-                return "inf.";
-            case 0:
-            default:
-                return "default";
+        for (String commandName : config.getCommandKeys()) {
+            setValue(view, config, commandName);
         }
     }
 
+    private static void setValue(View view, Config config, String key) {
+        view.set(key, config.getCommand(key));
+    }
 }

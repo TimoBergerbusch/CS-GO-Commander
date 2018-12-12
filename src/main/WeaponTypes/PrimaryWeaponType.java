@@ -1,8 +1,5 @@
 package main.WeaponTypes;
 
-import java.util.Arrays;
-import java.util.List;
-
 public enum PrimaryWeaponType {
     AK74("ak47"), M4A1("m4a1_silencer");
 
@@ -13,7 +10,7 @@ public enum PrimaryWeaponType {
     }
 
     public static PrimaryWeaponType contains(String value) {
-        List<PrimaryWeaponType> primaryWeaponTypes = Arrays.asList(PrimaryWeaponType.values());
+        PrimaryWeaponType[] primaryWeaponTypes = PrimaryWeaponType.values();
         for (PrimaryWeaponType pwt : primaryWeaponTypes)
             if (pwt.name.equalsIgnoreCase(value))
                 return pwt;
@@ -22,6 +19,10 @@ public enum PrimaryWeaponType {
     }
 
     public String toString() {
+        return this.name;
+    }
+
+    public String getCommand() {
         return "weapon_" + this.name;
     }
 }

@@ -11,6 +11,8 @@
 	mp_ignore_round_win_conditions 1;
 # no halftime
 	mp_halftime 0;
+# halftime duration
+    mp_halftime_duration 10;
 # end warmup
 	mp_warmup_end;
 # restart game (seconds)
@@ -21,6 +23,15 @@
 	sv_teambalance 0;
 # no weapons on the map
 	mp_weapons_allow_map_placed 0;
+# max money
+    mp_maxmoney 50000;
+# start money
+    mp_startmoney 60000
+# freeze time
+    mp_freezetime 0
+# buytime
+    mp_buytime 9999
+
 
 ########################
 ### SPECIAL GAMEMODE ###

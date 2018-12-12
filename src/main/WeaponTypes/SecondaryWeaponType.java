@@ -1,8 +1,5 @@
 package main.WeaponTypes;
 
-import java.util.Arrays;
-import java.util.List;
-
 public enum SecondaryWeaponType {
     GLOCK("glock"), USPS("usp_silencer"), P250("p250");
 
@@ -13,7 +10,7 @@ public enum SecondaryWeaponType {
     }
 
     public static SecondaryWeaponType contains(String value) {
-        List<SecondaryWeaponType> secondaryWeaponTypes = Arrays.asList(SecondaryWeaponType.values());
+        SecondaryWeaponType[] secondaryWeaponTypes = SecondaryWeaponType.values();
         for (SecondaryWeaponType swt : secondaryWeaponTypes)
             if (swt.name.equalsIgnoreCase(value))
                 return swt;
@@ -22,6 +19,10 @@ public enum SecondaryWeaponType {
     }
 
     public String toString() {
+        return this.name;
+    }
+
+    public String getCommand() {
         return "weapon_" + this.name;
     }
 }

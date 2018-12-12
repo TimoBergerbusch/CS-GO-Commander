@@ -24,22 +24,40 @@ public class Config {
     @Contract(" -> new")
     public static Config getDefaultConfig() {
         ArrayList<Command> defaultCommands = new ArrayList<>();
-        defaultCommands.add(new IntegerCommand("mp_maxrounds", 50));
-        defaultCommands.add(new IntegerCommand("sv_infinite_ammo", 1));
-        defaultCommands.add(new IntegerCommand("mp_halftime_duration", 50));
-        defaultCommands.add(new BooleanCommand("mp_death_drop_gun", false));
-        defaultCommands.add(new BooleanCommand("mp_halftime", false));
-        defaultCommands.add(new IntegerCommand("mp_limitteams", 3));
-        defaultCommands.add(new BooleanCommand("mp_autoteambalance", false));
-        defaultCommands.add(new BooleanCommand("mp_teammembers_are_enemies", false));
-        defaultCommands.add(new BooleanCommand("mp_damage_headshot_only", false));
 
-        defaultCommands.add(new PrimaryWeaponCommand("mp_t_default_primary", PrimaryWeaponType.AK74));
-        defaultCommands.add(new PrimaryWeaponCommand("mp_ct_default_primary", PrimaryWeaponType.AK74));
-        defaultCommands.add(new SecondaryWeaponCommand("mp_t_default_primary", SecondaryWeaponType.GLOCK));
-        defaultCommands.add(new SecondaryWeaponCommand("mp_ct_default_primary", SecondaryWeaponType.USPS));
+
+        defaultCommands.add(new BooleanCommand("mp_do_warmup_period", true));
+        defaultCommands.add(new IntegerCommand("mp_halftime_duration", 30));
+        defaultCommands.add(new BooleanCommand("mp_halftime", true));
+        defaultCommands.add(new IntegerCommand("mp_warmup_duration", 60));
+
+        defaultCommands.add(new IntegerCommand("mp_maxrounds", 50));
+        defaultCommands.add(new IntegerCommand("mp_roundtime", 9999));
+        defaultCommands.add(new IntegerCommand("mp_maxmoney", 60000));
+        defaultCommands.add(new IntegerCommand("mp_startmoney", 50000));
+        defaultCommands.add(new IntegerCommand("mp_freezetime", 10));
+        defaultCommands.add(new IntegerCommand("mp_buytime", 9999));
+        defaultCommands.add(new BooleanCommand("mp_buy_anywhere", true));
+        defaultCommands.add(new IntegerCommand("mp_limitteams", 3));
+        defaultCommands.add(new BooleanCommand("mp_autoteambalance", true));
 
         defaultCommands.add(new BooleanCommand("mp_free_armor", true));
+        defaultCommands.add(new IntegerCommand("sv_infinite_ammo", 2));
+        defaultCommands.add(new IntegerCommand("ammo_grenade_limit_total", 4));
+        defaultCommands.add(new BooleanCommand("mp_buy_allow_grenades", true));
+
+        defaultCommands.add(new BooleanCommand("mp_teammates_are_enemies", true));
+        defaultCommands.add(new BooleanCommand("mp_damage_headshot_only", true));
+        defaultCommands.add(new BooleanCommand("mp_death_drop_gun", true));
+
+        defaultCommands.add(new BooleanCommand("sv_showimpacts", true));
+        defaultCommands.add(new BooleanCommand("sv_grenade_trajectory", true));
+
+        defaultCommands.add(new PrimaryWeaponCommand("mp_t_default_primary", PrimaryWeaponType.AK74));
+        defaultCommands.add(new PrimaryWeaponCommand("mp_ct_default_primary", PrimaryWeaponType.M4A1));
+        defaultCommands.add(new SecondaryWeaponCommand("mp_t_default_secondary", SecondaryWeaponType.GLOCK));
+        defaultCommands.add(new SecondaryWeaponCommand("mp_ct_default_secondary", SecondaryWeaponType.USPS));
+
 
         return new Config(defaultCommands);
     }
@@ -119,6 +137,14 @@ public class Config {
                 return commands.get(i);
         }
         return null;
+    }
+
+    public ArrayList<String> getCommandKeys() {
+        ArrayList<String> allKeys = new ArrayList<>();
+        for (Command cmd : commands)
+            allKeys.add(cmd.getKey());
+
+        return allKeys;
     }
 
     @NotNull
