@@ -13,10 +13,8 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class Config {
 
@@ -63,6 +61,10 @@ public class Config {
         return new Config(commands);
     }
 
+    private Config(ArrayList<Command> commands) {
+        this.commands = commands;
+    }
+
     public static Command readCommand(@NotNull String row) {
         String[] commandparts = row.split(" ");
         Command cmd = null;
@@ -74,11 +76,11 @@ public class Config {
             System.err.println("Unexpected number of items for command(" + row + ") with parts " + commandparts.length);
         else if (commandparts.length == 1)
             cmd = new SingleCommand(key);
-        else if (commandparts.length == 2) {
+        else { // commandparts.length == 2
             String value = commandparts[1];
             value = value.replace(";", "");
             if (Arrays.asList(Command.booleanCommands).contains(key)) {
-                if (value.equals("0") || value.equals("0"))
+                if (value.equals("0"))
                     cmd = new BooleanCommand(key, false);
                 else
                     cmd = new BooleanCommand(key, true);
@@ -98,7 +100,8 @@ public class Config {
                         cmd = new PrimaryWeaponCommand(key, pwt);
                     } else if (swt != null) {
                         cmd = new SecondaryWeaponCommand(key, swt);
-                    } else if (ut != null) {
+                    } else //noinspection StatementWithEmptyBody
+                        if (ut != null) {
                         // TODO
                     } else
                         cmd = new StringCommand(key, value);
@@ -109,13 +112,9 @@ public class Config {
     }
 
     @NotNull
-    static String readFile(String path, Charset encoding) throws IOException {
+    private static String readFile(String path, Charset encoding) throws IOException {
         byte[] encoded = Files.readAllBytes(Paths.get(path));
         return new String(encoded, encoding);
-    }
-
-    public Config(ArrayList<Command> commands) {
-        this.commands = commands;
     }
 
     @Override
