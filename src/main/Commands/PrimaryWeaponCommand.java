@@ -10,6 +10,11 @@ public class PrimaryWeaponCommand extends Command<PrimaryWeaponType> {
 
     @Override
     public String toString() {
-        return "PrimaryWeapon"+super.toString();
+        return "PrimaryWeapon" + super.toString();
+    }
+
+    @Override
+    public String getCommand() {
+        return this.key + " " + this.value.getCommand() + ";";
     }
 }

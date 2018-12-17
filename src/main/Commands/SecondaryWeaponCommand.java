@@ -9,6 +9,11 @@ public class SecondaryWeaponCommand extends Command<SecondaryWeaponType> {
 
     @Override
     public String toString() {
-        return "SecondaryWeapon"+super.toString();
+        return "SecondaryWeapon" + super.toString();
+    }
+
+    @Override
+    public String getCommand() {
+        return this.key + " " + this.value.getCommand() + ";";
     }
 }
