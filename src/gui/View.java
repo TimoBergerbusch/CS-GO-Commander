@@ -68,7 +68,7 @@ public class View extends JFrame {
     private DefaultTableModel tableModel;
 
     private static View view;
-    private HashMap<String, Object> map;
+    private HashMap<String, Object> commandToObject;
     private ArrayList<Object> listOfAllObjects;
 
     public static View getView() {
@@ -131,31 +131,35 @@ public class View extends JFrame {
     }
 
     private void initializeActionListener() {
-        btn_produceCommands.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                StringBuilder sb = new StringBuilder();
-                for (Object obj : listOfAllObjects) {
-                    if (obj instanceof JTextField) {
-                        JTextField tf = ((JTextField) obj);
-                        sb.append(tf.getToolTipText()).append(" ").append(tf.getText()).append(";\n");
-                    } else if (obj instanceof JCheckBox) {
-                        JCheckBox tf = ((JCheckBox) obj);
-                        sb.append(tf.getToolTipText()).append(" ").append(tf.isSelected() ? 1 : 0).append(";\n");
-                    } else if (obj instanceof JComboBox) {
-                        System.out.println("PROBLEMS WITH " + obj + "\t " + ((JComboBox) obj).getToolTipText());
-                        if (((JComboBox) obj).getToolTipText().equalsIgnoreCase("sv_infinite_ammo")) {
-                            System.out.println("PROBLEM");
-                        } else if (((JComboBox) obj).getToolTipText().equalsIgnoreCase("sv_infinite_ammo")) {
-                            System.out.println("PROBLEM");
-                        } else {
-                            sb.append(((JComboBox) obj).getToolTipText()).append(" ").append("weapon_" + ((JComboBox) obj).getSelectedItem()).append(";\n");
-                        }
-                    }
-                }
-                System.out.println(sb.toString());
-            }
-        });
+//        btn_produceCommands.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                StringBuilder sb = new StringBuilder();
+//                for (Object obj : listOfAllObjects) {
+//                    if (obj instanceof JTextField) {
+//                        JTextField tf = ((JTextField) obj);
+//                        sb.append(tf.getToolTipText()).append(" ").append(tf.getText()).append(";\n");
+//                    } else if (obj instanceof JCheckBox) {
+//                        JCheckBox tf = ((JCheckBox) obj);
+//                        sb.append(tf.getToolTipText()).append(" ").append(tf.isSelected() ? 1 : 0).append(";\n");
+//                    } else if (obj instanceof JComboBox) {
+//                        System.out.println("PROBLEMS WITH " + obj + "\t " + ((JComboBox) obj).getToolTipText());
+//                        if (((JComboBox) obj).getToolTipText().equalsIgnoreCase("sv_infinite_ammo")) {
+//                            System.out.println("PROBLEM");
+//                        } else if (((JComboBox) obj).getToolTipText().equalsIgnoreCase("sv_infinite_ammo")) {
+//                            System.out.println("PROBLEM");
+//                        } else {
+//                            sb.append(((JComboBox) obj).getToolTipText()).append(" ").append("weapon_" + ((JComboBox) obj).getSelectedItem()).append(";\n");
+//                        }
+//                    }
+//                }
+//                System.out.println(sb.toString());
+//            }
+//        });
+        AL al = new AL();
+        btn_produceCommands.addActionListener(al);
+        btn_copyToClipboard.addActionListener(al);
+        btn_saveCommandsToFile.addActionListener(al);
     }
 
     private static String getAmmoType(int value) {
@@ -171,35 +175,35 @@ public class View extends JFrame {
     }
 
     private void initializeHashmap() {
-        map = new HashMap<>();
-        map.put("mp_halftime_duration", tf_halftime_duration);
-        map.put("mp_maxmoney", tf_maxmoney);
-        map.put("mp_startmoney", tf_startmoney);
-        map.put("mp_freezetime", tf_freezetime);
-        map.put("mp_buytime", tf_buytime);
-        map.put("mp_warmup_duration", tf_warmup_duration);
-        map.put("mp_maxrounds", tf_max_rounds);
-        map.put("sv_infinite_ammo", cb_ammo_type);
-        map.put("mp_death_drop_gun", ch_death_drop_gun);
-        map.put("mp_halftime", ch_halftime);
-        map.put("mp_limitteams", tf_limit_teams);
-        map.put("mp_roundtime", tf_roundttime);
-        map.put("mp_autoteambalance", ch_auto_teambalance);
-        map.put("mp_teammates_are_enemies", ch_free_for_all);
-        map.put("mp_damage_headshot_only", ch_HS_only);
-        map.put("mp_free_armor", ch_free_armor);
+        commandToObject = new HashMap<>();
+        commandToObject.put("mp_halftime_duration", tf_halftime_duration);
+        commandToObject.put("mp_maxmoney", tf_maxmoney);
+        commandToObject.put("mp_startmoney", tf_startmoney);
+        commandToObject.put("mp_freezetime", tf_freezetime);
+        commandToObject.put("mp_buytime", tf_buytime);
+        commandToObject.put("mp_warmup_duration", tf_warmup_duration);
+        commandToObject.put("mp_maxrounds", tf_max_rounds);
+        commandToObject.put("sv_infinite_ammo", cb_ammo_type);
+        commandToObject.put("mp_death_drop_gun", ch_death_drop_gun);
+        commandToObject.put("mp_halftime", ch_halftime);
+        commandToObject.put("mp_limitteams", tf_limit_teams);
+        commandToObject.put("mp_roundtime", tf_roundttime);
+        commandToObject.put("mp_autoteambalance", ch_auto_teambalance);
+        commandToObject.put("mp_teammates_are_enemies", ch_free_for_all);
+        commandToObject.put("mp_damage_headshot_only", ch_HS_only);
+        commandToObject.put("mp_free_armor", ch_free_armor);
 
-        map.put("mp_ct_default_primary", cb_weapon_primary_ct);
-        map.put("mp_t_default_primary", cb_weapon_primary_t);
-        map.put("mp_ct_default_secondary", cb_weapon_secondary_ct);
-        map.put("mp_t_default_secondary", cb_weapon_secondary_t);
+        commandToObject.put("mp_ct_default_primary", cb_weapon_primary_ct);
+        commandToObject.put("mp_t_default_primary", cb_weapon_primary_t);
+        commandToObject.put("mp_ct_default_secondary", cb_weapon_secondary_ct);
+        commandToObject.put("mp_t_default_secondary", cb_weapon_secondary_t);
 
-        map.put("sv_showimpacts", ch_show_impacts);
-        map.put("sv_grenade_trajectory", ch_show_grenades);
-        map.put("mp_buy_anywhere", ch_buy_anywhere);
-        map.put("mp_do_warmup_period", ch_warmup);
-        map.put("mp_buy_allow_grenades", ch_can_buy_grenades);
-        map.put("ammo_grenade_limit_total", cb_nade_limit);
+        commandToObject.put("sv_showimpacts", ch_show_impacts);
+        commandToObject.put("sv_grenade_trajectory", ch_show_grenades);
+        commandToObject.put("mp_buy_anywhere", ch_buy_anywhere);
+        commandToObject.put("mp_do_warmup_period", ch_warmup);
+        commandToObject.put("mp_buy_allow_grenades", ch_can_buy_grenades);
+        commandToObject.put("ammo_grenade_limit_total", cb_nade_limit);
 
     }
 
@@ -232,7 +236,7 @@ public class View extends JFrame {
     }
 
     public void set(String key, Command cmd) {
-        Object obj = map.get(key);
+        Object obj = commandToObject.get(key);
         if (obj == null) {
             tableModel.addRow(new Object[]{cmd.getKey(), cmd.getValue()});
         } else if (cmd instanceof PrimaryWeaponCommand || cmd instanceof SecondaryWeaponCommand) { //TODO utility
@@ -249,8 +253,8 @@ public class View extends JFrame {
     }
 
     public String getKeyToObject(Object obj) {
-        for (String s : map.keySet())
-            if (map.get(s) == obj)
+        for (String s : commandToObject.keySet())
+            if (commandToObject.get(s) == obj)
                 return s;
 
         return null;
@@ -691,12 +695,12 @@ public class View extends JFrame {
     }
 
     /**
-     * Gets map
+     * Gets commandToObject
      *
      * @return value of $file.name
      */
-    public HashMap<String, Object> getMap() {
-        return map;
+    public HashMap<String, Object> getCommandToObject() {
+        return commandToObject;
     }
 }
 

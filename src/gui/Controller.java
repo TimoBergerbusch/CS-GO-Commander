@@ -1,6 +1,9 @@
 package gui;
 
+import main.Commands.Command;
 import main.Config;
+
+import java.util.ArrayList;
 
 public class Controller {
 

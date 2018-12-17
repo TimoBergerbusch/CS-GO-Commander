@@ -9,6 +9,11 @@ public class ViewTester {
         v.setVisible(true);
 
         Config config = Config.getDefaultConfig();
-        Controller.loadConfig(config);
+//        Controller.loadConfig(config);
+
+        SimpleCommanding sc = SimpleCommanding.getInstance();
+        sc.readConfig(config);
+        sc.refreshView();
+        System.out.println(sc.createConfig().toString());
     }
 }

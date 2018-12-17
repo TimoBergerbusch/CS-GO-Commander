@@ -63,19 +63,25 @@ public class Config {
     }
 
     public static Config readConfigFile(@NotNull File configFile) {
-        ArrayList<Command> commands = null;
+        String content = "";
         try {
-            String content = Config.readFile(configFile.getPath(), StandardCharsets.UTF_8);
-            String[] stringCommands = content.split(";");
-            commands = new ArrayList<>(stringCommands.length);
+            content = Config.readFile(configFile.getPath(), StandardCharsets.UTF_8);
 
-            for (int i = 0; i < stringCommands.length; i++) {
-                stringCommands[i] = stringCommands[i].trim();
-
-                commands.add(readCommand(stringCommands[i]));
-            }
         } catch (IOException e) {
             e.printStackTrace();
+        }
+        return parseString(content);
+    }
+
+    public static Config parseString(String content) {
+        ArrayList<Command> commands = null;
+        String[] stringCommands = content.split(";");
+        commands = new ArrayList<>(stringCommands.length);
+
+        for (int i = 0; i < stringCommands.length; i++) {
+            stringCommands[i] = stringCommands[i].trim();
+
+            commands.add(readCommand(stringCommands[i]));
         }
 
         return new Config(commands);
