@@ -110,6 +110,7 @@
                             </constraints>
                             <properties>
                               <background color="-8158333"/>
+                              <enabled value="false"/>
                               <foreground color="-1"/>
                               <text value="Flashbang"/>
                               <toolTipText value="Click to start with a flashbang"/>
@@ -121,6 +122,7 @@
                             </constraints>
                             <properties>
                               <background color="-8158333"/>
+                              <enabled value="false"/>
                               <foreground color="-1"/>
                               <text value="Molotov"/>
                               <toolTipText value="Click to start with a molotov"/>
@@ -132,6 +134,7 @@
                             </constraints>
                             <properties>
                               <background color="-8158333"/>
+                              <enabled value="false"/>
                               <foreground color="-1"/>
                               <text value="Smoke Grenade"/>
                               <toolTipText value="Click to start with a Smoke Grenade"/>
@@ -143,6 +146,7 @@
                             </constraints>
                             <properties>
                               <background color="-8158333"/>
+                              <enabled value="false"/>
                               <foreground color="-1"/>
                               <text value="HE Grenade"/>
                               <toolTipText value="Click to start with a HE Grenade"/>
@@ -213,6 +217,7 @@
                             </constraints>
                             <properties>
                               <background color="-8158333"/>
+                              <enabled value="false"/>
                               <foreground color="-1"/>
                               <text value="Flashbang"/>
                               <toolTipText value="Click to start with a flashbang"/>
@@ -224,6 +229,7 @@
                             </constraints>
                             <properties>
                               <background color="-8158333"/>
+                              <enabled value="false"/>
                               <foreground color="-1"/>
                               <text value="Molotov"/>
                               <toolTipText value="Click to start with a molotov"/>
@@ -235,6 +241,7 @@
                             </constraints>
                             <properties>
                               <background color="-8158333"/>
+                              <enabled value="false"/>
                               <foreground color="-1"/>
                               <text value="Smoke Grenade"/>
                               <toolTipText value="Click to start with a Smoke Grenade"/>
@@ -246,6 +253,7 @@
                             </constraints>
                             <properties>
                               <background color="-8158333"/>
+                              <enabled value="false"/>
                               <foreground color="-1"/>
                               <text value="HE Grenade"/>
                               <toolTipText value="Click to start with a HE Grenade"/>
@@ -334,6 +342,7 @@
                               <horizontalAlignment value="10"/>
                               <horizontalTextPosition value="2"/>
                               <text value="Halftime (HT)"/>
+                              <toolTipText value="mp_halftime"/>
                             </properties>
                           </component>
                           <component id="b159e" class="javax.swing.JLabel">
@@ -356,7 +365,7 @@
                             </constraints>
                             <properties>
                               <text value="30"/>
-                              <toolTipText value="min 5"/>
+                              <toolTipText value="mp_warmup_duration"/>
                             </properties>
                           </component>
                         </children>
@@ -390,7 +399,9 @@
                                 <preferred-size width="50" height="-1"/>
                               </grid>
                             </constraints>
-                            <properties/>
+                            <properties>
+                              <toolTipText value="mp_maxrounds"/>
+                            </properties>
                           </component>
                           <component id="1ad89" class="javax.swing.JLabel">
                             <constraints>
@@ -409,7 +420,9 @@
                                 <preferred-size width="50" height="-1"/>
                               </grid>
                             </constraints>
-                            <properties/>
+                            <properties>
+                              <toolTipText value="mp_maxmoney"/>
+                            </properties>
                           </component>
                           <component id="a276f" class="javax.swing.JLabel">
                             <constraints>
@@ -428,7 +441,9 @@
                                 <preferred-size width="50" height="-1"/>
                               </grid>
                             </constraints>
-                            <properties/>
+                            <properties>
+                              <toolTipText value="mp_roundtime"/>
+                            </properties>
                           </component>
                           <component id="ded2d" class="javax.swing.JLabel">
                             <constraints>
@@ -447,7 +462,9 @@
                                 <preferred-size width="50" height="-1"/>
                               </grid>
                             </constraints>
-                            <properties/>
+                            <properties>
+                              <toolTipText value="mp_startmoney"/>
+                            </properties>
                           </component>
                           <component id="764ba" class="javax.swing.JLabel">
                             <constraints>
@@ -466,7 +483,9 @@
                                 <preferred-size width="30" height="-1"/>
                               </grid>
                             </constraints>
-                            <properties/>
+                            <properties>
+                              <toolTipText value="mp_freezetime"/>
+                            </properties>
                           </component>
                           <component id="4d383" class="javax.swing.JLabel">
                             <constraints>
@@ -485,7 +504,9 @@
                                 <preferred-size width="50" height="-1"/>
                               </grid>
                             </constraints>
-                            <properties/>
+                            <properties>
+                              <toolTipText value="mp_buytime"/>
+                            </properties>
                           </component>
                           <component id="55692" class="javax.swing.JCheckBox" binding="ch_buy_anywhere">
                             <constraints>
@@ -517,7 +538,9 @@
                                 <preferred-size width="50" height="-1"/>
                               </grid>
                             </constraints>
-                            <properties/>
+                            <properties>
+                              <toolTipText value="mp_limitteams"/>
+                            </properties>
                           </component>
                           <component id="ef54b" class="javax.swing.JCheckBox" binding="ch_auto_teambalance">
                             <constraints>
@@ -591,7 +614,7 @@
                                 <item value="inf."/>
                                 <item value="+reload"/>
                               </model>
-                              <toolTipText value="the ammotype: default, infinite, infinite magazines"/>
+                              <toolTipText value="sv_infinite_ammo"/>
                             </properties>
                           </component>
                           <component id="30aec" class="javax.swing.JComboBox" binding="cb_nade_limit">
@@ -607,7 +630,7 @@
                                 <item value="1"/>
                                 <item value="0"/>
                               </model>
-                              <toolTipText value="number of nades allowed"/>
+                              <toolTipText value="ammo_grenade_limit_total"/>
                             </properties>
                           </component>
                           <component id="b4283" class="javax.swing.JCheckBox" binding="ch_can_buy_grenades">

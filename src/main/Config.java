@@ -25,7 +25,6 @@ public class Config {
     public static Config getDefaultConfig() {
         ArrayList<Command> defaultCommands = new ArrayList<>();
 
-
         defaultCommands.add(new BooleanCommand("mp_do_warmup_period", true));
         defaultCommands.add(new IntegerCommand("mp_halftime_duration", 30));
         defaultCommands.add(new BooleanCommand("mp_halftime", true));
@@ -58,6 +57,7 @@ public class Config {
         defaultCommands.add(new SecondaryWeaponCommand("mp_t_default_secondary", SecondaryWeaponType.GLOCK));
         defaultCommands.add(new SecondaryWeaponCommand("mp_ct_default_secondary", SecondaryWeaponType.USPS));
 
+        defaultCommands.add(new UtilityCommand("give", UtilityType.SMOKE));
 
         return new Config(defaultCommands);
     }

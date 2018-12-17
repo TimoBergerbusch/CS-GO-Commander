@@ -9,6 +9,6 @@ public class ViewTester {
         v.setVisible(true);
 
         Config config = Config.getDefaultConfig();
-        GUILoader.loadConfig(config);
+        Controller.loadConfig(config);
     }
 }

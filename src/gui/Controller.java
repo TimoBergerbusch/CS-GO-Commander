@@ -2,7 +2,7 @@ package gui;
 
 import main.Config;
 
-public class GUILoader {
+public class Controller {
 
     public static void loadConfig(Config config) {
         View view = View.getView();
@@ -15,4 +15,5 @@ public class GUILoader {
     private static void setValue(View view, Config config, String key) {
         view.set(key, config.getCommand(key));
     }
+
 }
