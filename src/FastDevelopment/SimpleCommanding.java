@@ -1,11 +1,11 @@
-package gui;
+package FastDevelopment;
 
+import gui.Triple;
+import gui.View;
+import main.Commands.Command;
 import main.Config;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.ObjectInputFilter;
 import java.util.HashMap;
 
 public class SimpleCommanding {
@@ -30,7 +30,7 @@ public class SimpleCommanding {
 
 
         for (String key : commandToObject.keySet()) {
-            System.out.println("Key: " + key);
+//            System.out.println("Key: " + key);
             Triple t = new Triple(key, commandToObject.get(key), "");
             keyToTriple.put(key, t);
             objectToTriple.put(t.getObj(), t);
@@ -43,6 +43,11 @@ public class SimpleCommanding {
                 keyToTriple.get(key).setValue(config.getCommand(key).getValue().toString());
             } catch (NullPointerException e) {
                 System.out.println("No Object for: " + key);
+                Command cmd = config.getCommand(key);
+                View.getView().set(cmd.getKey(), cmd);
+                Triple t = new Triple(key, null, "");
+                t.setValue(config.getCommand(key).getValue().toString());
+                keyToTriple.put(key, t);
             }
         }
     }
@@ -66,8 +71,12 @@ public class SimpleCommanding {
     public Config createConfig() {
         StringBuilder sb = new StringBuilder();
 
-        for (Object obj : objectToTriple.keySet()) {
-            Triple t = objectToTriple.get(obj);
+        for (String key : keyToTriple.keySet()) {
+            if (key.equals(""))
+                continue;
+
+            Triple t = keyToTriple.get(key);
+            Object obj = t.getObj();
 
             sb.append(t.getKey()).append(" ");
 
@@ -79,7 +88,17 @@ public class SimpleCommanding {
             } else if (obj instanceof JTextField) {
                 sb.append(((JTextField) obj).getText()).append(";\n");
             } else {
-                sb.append("ERROR").append(";\n");
+                View v = View.getView();
+                int rowIndex = v.getRowOfComand(key);
+                if (rowIndex != -1) {
+                    Object value = v.getTableModel().getValueAt(rowIndex, 1);
+                    if (value.toString().equals("false"))
+                        sb.append("0").append(";\n");
+                    else if (value.toString().equals("true"))
+                        sb.append("1").append(";\n");
+                    else
+                        sb.append(value.toString()).append(";\n");
+                }
             }
         }
 

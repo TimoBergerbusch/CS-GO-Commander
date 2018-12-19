@@ -1,5 +1,6 @@
 package gui;
 
+import FastDevelopment.AL;
 import main.Commands.*;
 import main.WeaponTypes.PrimaryWeaponType;
 import main.WeaponTypes.SecondaryWeaponType;
@@ -7,11 +8,10 @@ import main.WeaponTypes.SecondaryWeaponType;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 public class View extends JFrame {
     private JPanel copyPanel;
@@ -57,6 +57,7 @@ public class View extends JFrame {
     private JCheckBox ch_death_drop_gun;
     private JTextField tf_limit_teams;
     private JCheckBox ch_auto_teambalance;
+    private JMenuItem mi_load_config;
 
     private JPanel tab_weapons;
     private JPanel tab_basic_commands;
@@ -64,10 +65,12 @@ public class View extends JFrame {
     private JButton btn_add_command;
     private JButton btn_delete_other_command;
     private JScrollPane jScrollPane;
+    private JButton btn_load;
 
     private DefaultTableModel tableModel;
 
     private static View view;
+    public static String VERSION = "v0.1";
     private HashMap<String, Object> commandToObject;
     private ArrayList<Object> listOfAllObjects;
 
@@ -131,35 +134,14 @@ public class View extends JFrame {
     }
 
     private void initializeActionListener() {
-//        btn_produceCommands.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                StringBuilder sb = new StringBuilder();
-//                for (Object obj : listOfAllObjects) {
-//                    if (obj instanceof JTextField) {
-//                        JTextField tf = ((JTextField) obj);
-//                        sb.append(tf.getToolTipText()).append(" ").append(tf.getText()).append(";\n");
-//                    } else if (obj instanceof JCheckBox) {
-//                        JCheckBox tf = ((JCheckBox) obj);
-//                        sb.append(tf.getToolTipText()).append(" ").append(tf.isSelected() ? 1 : 0).append(";\n");
-//                    } else if (obj instanceof JComboBox) {
-//                        System.out.println("PROBLEMS WITH " + obj + "\t " + ((JComboBox) obj).getToolTipText());
-//                        if (((JComboBox) obj).getToolTipText().equalsIgnoreCase("sv_infinite_ammo")) {
-//                            System.out.println("PROBLEM");
-//                        } else if (((JComboBox) obj).getToolTipText().equalsIgnoreCase("sv_infinite_ammo")) {
-//                            System.out.println("PROBLEM");
-//                        } else {
-//                            sb.append(((JComboBox) obj).getToolTipText()).append(" ").append("weapon_" + ((JComboBox) obj).getSelectedItem()).append(";\n");
-//                        }
-//                    }
-//                }
-//                System.out.println(sb.toString());
-//            }
-//        });
         AL al = new AL();
         btn_produceCommands.addActionListener(al);
         btn_copyToClipboard.addActionListener(al);
         btn_saveCommandsToFile.addActionListener(al);
+        btn_load.addActionListener(al);
+
+        btn_add_command.addActionListener(al);
+        btn_delete_other_command.addActionListener(al);
     }
 
     private static String getAmmoType(int value) {
@@ -175,7 +157,7 @@ public class View extends JFrame {
     }
 
     private void initializeHashmap() {
-        commandToObject = new HashMap<>();
+        commandToObject = new LinkedHashMap<>();
         commandToObject.put("mp_halftime_duration", tf_halftime_duration);
         commandToObject.put("mp_maxmoney", tf_maxmoney);
         commandToObject.put("mp_startmoney", tf_startmoney);
@@ -229,6 +211,7 @@ public class View extends JFrame {
     }
 
     private void setFrameBasics() {
+        this.setTitle("CS:GO - Commander " + View.VERSION + " - by Timo Bergerbusch");
         this.add(rootPanel);
         this.setSize(new Dimension(635, 455));
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -258,6 +241,14 @@ public class View extends JFrame {
                 return s;
 
         return null;
+    }
+
+    public int getRowOfComand(String key) {
+        for (int i = 0; i < other_commands_table.getRowCount(); i++) {
+            if (key.equals(tableModel.getValueAt(i, 0)))
+                return i;
+        }
+        return -1;
     }
 
     // GETTER
@@ -701,6 +692,528 @@ public class View extends JFrame {
      */
     public HashMap<String, Object> getCommandToObject() {
         return commandToObject;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param copyPanel the new value
+     */
+    public void setCopyPanel(JPanel copyPanel) {
+        this.copyPanel = copyPanel;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param commandsOuput the new value
+     */
+    public void setCommandsOuput(JTextArea commandsOuput) {
+        this.commandsOuput = commandsOuput;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param btn_produceCommands the new value
+     */
+    public void setBtn_produceCommands(JButton btn_produceCommands) {
+        this.btn_produceCommands = btn_produceCommands;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param btn_copyToClipboard the new value
+     */
+    public void setBtn_copyToClipboard(JButton btn_copyToClipboard) {
+        this.btn_copyToClipboard = btn_copyToClipboard;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param btn_saveCommandsToFile the new value
+     */
+    public void setBtn_saveCommandsToFile(JButton btn_saveCommandsToFile) {
+        this.btn_saveCommandsToFile = btn_saveCommandsToFile;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param rootPanel the new value
+     */
+    public void setRootPanel(JPanel rootPanel) {
+        this.rootPanel = rootPanel;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param tf_halftime_duration the new value
+     */
+    public void setTf_halftime_duration(JTextField tf_halftime_duration) {
+        this.tf_halftime_duration = tf_halftime_duration;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param cb_ammo_type the new value
+     */
+    public void setCb_ammo_type(JComboBox cb_ammo_type) {
+        this.cb_ammo_type = cb_ammo_type;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param ch_warmup the new value
+     */
+    public void setCh_warmup(JCheckBox ch_warmup) {
+        this.ch_warmup = ch_warmup;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param tf_warmup_duration the new value
+     */
+    public void setTf_warmup_duration(JTextField tf_warmup_duration) {
+        this.tf_warmup_duration = tf_warmup_duration;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param ch_halftime the new value
+     */
+    public void setCh_halftime(JCheckBox ch_halftime) {
+        this.ch_halftime = ch_halftime;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param tf_max_rounds the new value
+     */
+    public void setTf_max_rounds(JTextField tf_max_rounds) {
+        this.tf_max_rounds = tf_max_rounds;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param tf_roundttime the new value
+     */
+    public void setTf_roundttime(JTextField tf_roundttime) {
+        this.tf_roundttime = tf_roundttime;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param tf_maxmoney the new value
+     */
+    public void setTf_maxmoney(JTextField tf_maxmoney) {
+        this.tf_maxmoney = tf_maxmoney;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param tf_startmoney the new value
+     */
+    public void setTf_startmoney(JTextField tf_startmoney) {
+        this.tf_startmoney = tf_startmoney;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param tf_freezetime the new value
+     */
+    public void setTf_freezetime(JTextField tf_freezetime) {
+        this.tf_freezetime = tf_freezetime;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param tf_buytime the new value
+     */
+    public void setTf_buytime(JTextField tf_buytime) {
+        this.tf_buytime = tf_buytime;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param ch_buy_anywhere the new value
+     */
+    public void setCh_buy_anywhere(JCheckBox ch_buy_anywhere) {
+        this.ch_buy_anywhere = ch_buy_anywhere;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param ch_can_buy_grenades the new value
+     */
+    public void setCh_can_buy_grenades(JCheckBox ch_can_buy_grenades) {
+        this.ch_can_buy_grenades = ch_can_buy_grenades;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param ch_free_armor the new value
+     */
+    public void setCh_free_armor(JCheckBox ch_free_armor) {
+        this.ch_free_armor = ch_free_armor;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param cb_nade_limit the new value
+     */
+    public void setCb_nade_limit(JComboBox cb_nade_limit) {
+        this.cb_nade_limit = cb_nade_limit;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param ch_free_for_all the new value
+     */
+    public void setCh_free_for_all(JCheckBox ch_free_for_all) {
+        this.ch_free_for_all = ch_free_for_all;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param ch_HS_only the new value
+     */
+    public void setCh_HS_only(JCheckBox ch_HS_only) {
+        this.ch_HS_only = ch_HS_only;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param ch_show_impacts the new value
+     */
+    public void setCh_show_impacts(JCheckBox ch_show_impacts) {
+        this.ch_show_impacts = ch_show_impacts;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param ch_show_grenades the new value
+     */
+    public void setCh_show_grenades(JCheckBox ch_show_grenades) {
+        this.ch_show_grenades = ch_show_grenades;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param cb_weapon_primary_t the new value
+     */
+    public void setCb_weapon_primary_t(JComboBox cb_weapon_primary_t) {
+        this.cb_weapon_primary_t = cb_weapon_primary_t;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param cb_weapon_primary_ct the new value
+     */
+    public void setCb_weapon_primary_ct(JComboBox cb_weapon_primary_ct) {
+        this.cb_weapon_primary_ct = cb_weapon_primary_ct;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param cb_weapon_secondary_t the new value
+     */
+    public void setCb_weapon_secondary_t(JComboBox cb_weapon_secondary_t) {
+        this.cb_weapon_secondary_t = cb_weapon_secondary_t;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param cb_weapon_secondary_ct the new value
+     */
+    public void setCb_weapon_secondary_ct(JComboBox cb_weapon_secondary_ct) {
+        this.cb_weapon_secondary_ct = cb_weapon_secondary_ct;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param ch_flashbang_ct the new value
+     */
+    public void setCh_flashbang_ct(JCheckBox ch_flashbang_ct) {
+        this.ch_flashbang_ct = ch_flashbang_ct;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param ch_flashbang_t the new value
+     */
+    public void setCh_flashbang_t(JCheckBox ch_flashbang_t) {
+        this.ch_flashbang_t = ch_flashbang_t;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param ch_he_grenade_ct the new value
+     */
+    public void setCh_he_grenade_ct(JCheckBox ch_he_grenade_ct) {
+        this.ch_he_grenade_ct = ch_he_grenade_ct;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param ch_he_grenade_t the new value
+     */
+    public void setCh_he_grenade_t(JCheckBox ch_he_grenade_t) {
+        this.ch_he_grenade_t = ch_he_grenade_t;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param ch_molotov_ct the new value
+     */
+    public void setCh_molotov_ct(JCheckBox ch_molotov_ct) {
+        this.ch_molotov_ct = ch_molotov_ct;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param ch_molotov_t the new value
+     */
+    public void setCh_molotov_t(JCheckBox ch_molotov_t) {
+        this.ch_molotov_t = ch_molotov_t;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param ch_smoke_grenade_ct the new value
+     */
+    public void setCh_smoke_grenade_ct(JCheckBox ch_smoke_grenade_ct) {
+        this.ch_smoke_grenade_ct = ch_smoke_grenade_ct;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param ch_smoke_grenade_t the new value
+     */
+    public void setCh_smoke_grenade_t(JCheckBox ch_smoke_grenade_t) {
+        this.ch_smoke_grenade_t = ch_smoke_grenade_t;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param other_commands_table the new value
+     */
+    public void setOther_commands_table(JTable other_commands_table) {
+        this.other_commands_table = other_commands_table;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param ch_death_drop_gun the new value
+     */
+    public void setCh_death_drop_gun(JCheckBox ch_death_drop_gun) {
+        this.ch_death_drop_gun = ch_death_drop_gun;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param tf_limit_teams the new value
+     */
+    public void setTf_limit_teams(JTextField tf_limit_teams) {
+        this.tf_limit_teams = tf_limit_teams;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param ch_auto_teambalance the new value
+     */
+    public void setCh_auto_teambalance(JCheckBox ch_auto_teambalance) {
+        this.ch_auto_teambalance = ch_auto_teambalance;
+    }
+
+    /**
+     * Gets mi_load_config
+     *
+     * @return value of $file.name
+     */
+    public JMenuItem getMi_load_config() {
+        return mi_load_config;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param mi_load_config the new value
+     */
+    public void setMi_load_config(JMenuItem mi_load_config) {
+        this.mi_load_config = mi_load_config;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param tab_weapons the new value
+     */
+    public void setTab_weapons(JPanel tab_weapons) {
+        this.tab_weapons = tab_weapons;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param tab_basic_commands the new value
+     */
+    public void setTab_basic_commands(JPanel tab_basic_commands) {
+        this.tab_basic_commands = tab_basic_commands;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param tab_others the new value
+     */
+    public void setTab_others(JPanel tab_others) {
+        this.tab_others = tab_others;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param btn_add_command the new value
+     */
+    public void setBtn_add_command(JButton btn_add_command) {
+        this.btn_add_command = btn_add_command;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param btn_delete_other_command the new value
+     */
+    public void setBtn_delete_other_command(JButton btn_delete_other_command) {
+        this.btn_delete_other_command = btn_delete_other_command;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param jScrollPane the new value
+     */
+    public void setjScrollPane(JScrollPane jScrollPane) {
+        this.jScrollPane = jScrollPane;
+    }
+
+    /**
+     * Gets btn_load
+     *
+     * @return value of $file.name
+     */
+    public JButton getBtn_load() {
+        return btn_load;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param btn_load the new value
+     */
+    public void setBtn_load(JButton btn_load) {
+        this.btn_load = btn_load;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param tableModel the new value
+     */
+    public void setTableModel(DefaultTableModel tableModel) {
+        this.tableModel = tableModel;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param view the new value
+     */
+    public static void setView(View view) {
+        View.view = view;
+    }
+
+    /**
+     * Gets VERSION
+     *
+     * @return value of $file.name
+     */
+    public static String getVERSION() {
+        return VERSION;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param VERSION the new value
+     */
+    public static void setVERSION(String VERSION) {
+        View.VERSION = VERSION;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param commandToObject the new value
+     */
+    public void setCommandToObject(HashMap<String, Object> commandToObject) {
+        this.commandToObject = commandToObject;
+    }
+
+    /**
+     * Gets listOfAllObjects
+     *
+     * @return value of $file.name
+     */
+    public ArrayList<Object> getListOfAllObjects() {
+        return listOfAllObjects;
+    }
+
+    /**
+     * Sets $file.name to a new value
+     *
+     * @param listOfAllObjects the new value
+     */
+    public void setListOfAllObjects(ArrayList<Object> listOfAllObjects) {
+        this.listOfAllObjects = listOfAllObjects;
     }
 }
 
