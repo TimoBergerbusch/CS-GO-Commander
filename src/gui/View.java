@@ -66,6 +66,7 @@ public class View extends JFrame {
     private JButton btn_delete_other_command;
     private JScrollPane jScrollPane;
     private JButton btn_load;
+    private JButton btn_edit_defaults;
 
     private DefaultTableModel tableModel;
 
@@ -142,6 +143,7 @@ public class View extends JFrame {
 
         btn_add_command.addActionListener(al);
         btn_delete_other_command.addActionListener(al);
+        btn_edit_defaults.addActionListener(al);
     }
 
     private static String getAmmoType(int value) {
@@ -220,6 +222,7 @@ public class View extends JFrame {
 
     public void set(String key, Command cmd) {
         Object obj = commandToObject.get(key);
+//        System.out.println("key: " + key + "\t cmd:" + cmd);
         if (obj == null) {
             tableModel.addRow(new Object[]{cmd.getKey(), cmd.getValue()});
         } else if (cmd instanceof PrimaryWeaponCommand || cmd instanceof SecondaryWeaponCommand) { //TODO utility
@@ -1115,6 +1118,14 @@ public class View extends JFrame {
      */
     public void setBtn_add_command(JButton btn_add_command) {
         this.btn_add_command = btn_add_command;
+    }
+
+    public JButton getBtn_edit_defaults() {
+        return btn_edit_defaults;
+    }
+
+    public void setBtn_edit_defaults(JButton btn_edit_defaults) {
+        this.btn_edit_defaults = btn_edit_defaults;
     }
 
     /**

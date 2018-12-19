@@ -1,5 +1,6 @@
 package FastDevelopment;
 
+import gui.EditDefaults;
 import gui.View;
 import main.Config;
 
@@ -61,6 +62,9 @@ public class AL implements ActionListener {
             v.getTableModel().addRow(new Object[]{"NEW ROW", "NEW VALUE"});
         } else if (e.getSource() == v.getBtn_delete_other_command()) {
             v.getTableModel().removeRow(v.getOther_commands_table().getSelectedRow());
+        } else if (e.getSource() == v.getBtn_edit_defaults()) {
+            EditDefaults editDefaults = new EditDefaults();
+            editDefaults.setVisible(true);
         }
     }
 }

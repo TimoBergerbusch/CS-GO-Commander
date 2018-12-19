@@ -18,7 +18,11 @@ public class PropertiesFetch {
     private Ini properties;
 
     private PropertiesFetch() {
-        File prop = new File(System.getProperty("user.dir")+"\\src\\FastDevelopment\\properties.ini");
+        this.load();
+    }
+
+    private void load() {
+        File prop = new File(System.getProperty("user.dir") + "\\src\\FastDevelopment\\properties.ini");
         try {
             properties = new Ini(prop);
         } catch (IOException e) {
@@ -33,5 +37,14 @@ public class PropertiesFetch {
 
     public static String set(String section, String key, String value) {
         return getInstance().properties.put(section, key, value);
+    }
+
+    public static void revalidate() {
+        try {
+            getInstance().properties.store();
+            getInstance().load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

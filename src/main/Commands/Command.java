@@ -5,9 +5,11 @@ public abstract class Command<T> {
     public static StringCommand ErrorCommand = new SingleCommand("ERROR");
 
     public static String[] booleanCommands = {
-            "mp_free_armor", "sv_allow_votes", "mp_overtime_enable", "mp_freezetime",
+            "mp_free_armor", "sv_allow_votes", "mp_overtime_enable", "mp_buy_anywhere",
             "mp_match_can_clinch", "mp_halftime", "mp_damage_headshot_only",
-            "mp_weapons_allow_map_placed", "mp_death_drop_gun", "mp_ignore_round_win_conditions"
+            "mp_weapons_allow_map_placed", "mp_death_drop_gun", "mp_ignore_round_win_conditions" ,
+            "mp_do_warmup_period", "mp_autoteambalance", "mp_buy_allow_grenades", "mp_teammates_are_enemies",
+            "sv_showimpacts", "sv_grenade_trajectory"
     };
 
     protected String key;

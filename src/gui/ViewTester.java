@@ -9,9 +9,9 @@ public class ViewTester {
         View v = View.getView();
         v.setVisible(true);
 
-//        Config config = Config.getDefaultConfig();
-////        Controller.loadConfig(config);
-//
+        Config config = Config.getDefaultConfigIni();
+        Controller.loadConfig(config);
+
 //        SimpleCommanding sc = SimpleCommanding.getInstance();
 //        sc.readConfig(config);
 //        sc.refreshView();
