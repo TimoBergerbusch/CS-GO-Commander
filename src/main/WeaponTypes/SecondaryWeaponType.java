@@ -1,7 +1,7 @@
 package main.WeaponTypes;
 
 public enum SecondaryWeaponType {
-    GLOCK("glock"), USPS("usp_silencer"), P250("p250");
+    NONE(""), GLOCK("glock"), USPS("usp_silencer"), P2000("hkp2000"), P250("p250"), DEAGLE("deagle"), FIVESEVEN("fiveseven"), TEC9("tec9"), CZ("cz75a");
 
     private String name;
 

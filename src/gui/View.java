@@ -192,6 +192,8 @@ public class View extends JFrame {
     }
 
     private void loadPrimarys() {
+//        cb_weapon_primary_ct.addItem("");
+//        cb_weapon_primary_t.addItem("");
         for (PrimaryWeaponType weapon : PrimaryWeaponType.values()) {
             cb_weapon_primary_ct.addItem(weapon);
             cb_weapon_primary_t.addItem(weapon);
@@ -199,6 +201,8 @@ public class View extends JFrame {
     }
 
     private void loadSecondarys() {
+//        cb_weapon_secondary_ct.addItem("");
+//        cb_weapon_secondary_t.addItem("");
         for (SecondaryWeaponType weapon : SecondaryWeaponType.values()) {
             cb_weapon_secondary_ct.addItem(weapon);
             cb_weapon_secondary_t.addItem(weapon);
@@ -215,7 +219,7 @@ public class View extends JFrame {
     private void setFrameBasics() {
         this.setTitle("CS:GO - Commander " + View.VERSION + " - by Timo Bergerbusch");
         this.add(rootPanel);
-        this.setSize(new Dimension(635, 455));
+        this.setSize(new Dimension(635, 495));
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
     }
@@ -247,7 +251,6 @@ public class View extends JFrame {
     }
 
     // GETTER
-
 
     /**
      * Gets commandsOuput
@@ -334,5 +337,22 @@ public class View extends JFrame {
         return btn_load;
     }
 
+    /**
+     * Gets other_commands_table
+     *
+     * @return value of $file.name
+     */
+    public JTable getOther_commands_table() {
+        return other_commands_table;
+    }
+
+    /**
+     * Gets cb_ammo_type
+     *
+     * @return value of $file.name
+     */
+    public JComboBox getCb_ammo_type() {
+        return cb_ammo_type;
+    }
 }
 

@@ -84,7 +84,10 @@ public class SimpleCommanding {
                 if (((JCheckBox) obj).isSelected()) sb.append("1;").append("\n");
                 else sb.append("0;").append("\n");
             } else if (obj instanceof JComboBox) {
-                sb.append(((JComboBox) obj).getSelectedItem().toString()).append(";\n");
+                String str = ((JComboBox) obj).getSelectedItem().toString();
+                if (obj != View.getView().getCb_ammo_type() && str.equals(""))
+                    str = "\"\"";
+                sb.append(str).append(";\n");
             } else if (obj instanceof JTextField) {
                 sb.append(((JTextField) obj).getText()).append(";\n");
             } else {
