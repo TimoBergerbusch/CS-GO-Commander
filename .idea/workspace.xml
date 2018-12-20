@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4992857a-0858-49d4-a119-6aa3ff9a177c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FastDevelopment/SimpleCommanding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FastDevelopment/SimpleCommanding.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/View.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/WeaponTypes/PrimaryWeaponType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/WeaponTypes/PrimaryWeaponType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/WeaponTypes/SecondaryWeaponType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/WeaponTypes/SecondaryWeaponType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FastDevelopment/AL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FastDevelopment/AL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Config.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -118,6 +115,7 @@
     <session id="54544397">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.32" value="1" />
           <entry key="project.opened" value="2" />
@@ -127,18 +125,18 @@
         <counts>
           <entry key="cfg" value="29" />
           <entry key="ini" value="43" />
-          <entry key="java" value="2898" />
+          <entry key="java" value="4474" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2898" />
+          <entry key="JAVA" value="4474" />
           <entry key="PLAIN_TEXT" value="72" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="cfg" value="1" />
+          <entry key="cfg" value="2" />
           <entry key="form" value="1" />
           <entry key="java" value="7" />
         </counts>
@@ -146,6 +144,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="GUI_DESIGNER_FORM" value="1" />
+          <entry key="Ini" value="1" />
           <entry key="JAVA" value="7" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
@@ -154,15 +153,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gui/ViewTester.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="11" column="52" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gui/View.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -208,27 +198,31 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/WeaponTypes/SecondaryWeaponType.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+            <state relative-caret-position="323">
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/Config.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="137" lean-forward="true" selection-start-line="137" selection-end-line="137" />
+            <state relative-caret-position="636">
+              <caret line="236" lean-forward="true" selection-start-line="236" selection-end-line="236" />
               <folding>
+                <element signature="e#1284#1292#0" />
+                <element signature="method#getDefaultConfig#0;class#Config#0" />
+                <element signature="method#getDefaultConfigIni#0;class#Config#0" />
                 <element signature="method#readConfigFile#0;class#Config#0" />
                 <element signature="method#parseString#0;class#Config#0" />
                 <element signature="method#getCommand#0;class#Config#0" />
                 <element signature="method#getCommandKeys#0;class#Config#0" />
                 <element signature="method#readFile#0;class#Config#0" />
-                <element signature="method#toString#0;class#Config#0" />
+                <element signature="method#collapseCommands#0;class#Config#0" />
+                <element signature="method#clusterCommands#0;class#Config#0" />
               </folding>
             </state>
           </provider>
@@ -237,7 +231,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FastDevelopment/SimpleCommanding.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
+            <state relative-caret-position="619">
               <caret line="89" column="29" selection-start-line="89" selection-start-column="29" selection-end-line="89" selection-end-column="29" />
               <folding>
                 <element signature="method#getInstance#0;class#SimpleCommanding#0" />
@@ -252,8 +246,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FastDevelopment/AL.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="63" column="65" selection-start-line="63" selection-start-column="42" selection-end-line="63" selection-end-column="65" />
+            <state relative-caret-position="170">
+              <caret line="21" column="103" selection-start-line="21" selection-start-column="103" selection-end-line="21" selection-end-column="103" />
             </state>
           </provider>
         </entry>
@@ -381,17 +375,17 @@
         <option value="$PROJECT_DIR$/src/gui/View.form" />
         <option value="$PROJECT_DIR$/src/gui/ViewTester.java" />
         <option value="$PROJECT_DIR$/src/main/Commands/Command.java" />
-        <option value="$PROJECT_DIR$/src/FastDevelopment/AL.java" />
         <option value="$PROJECT_DIR$/src/FastDevelopment/PropertiesFetch.java" />
         <option value="$PROJECT_DIR$/src/gui/EditDefaults.form" />
         <option value="$PROJECT_DIR$/src/gui/EditDefaults.java" />
         <option value="$PROJECT_DIR$/src/FastDevelopment/properties.ini" />
         <option value="$PROJECT_DIR$/src/FastDevelopment/propertiesBACKUP.ini" />
         <option value="$PROJECT_DIR$/src/main/WeaponTypes/PrimaryWeaponType.java" />
-        <option value="$PROJECT_DIR$/src/main/Config.java" />
         <option value="$PROJECT_DIR$/src/gui/View.java" />
         <option value="$PROJECT_DIR$/src/FastDevelopment/SimpleCommanding.java" />
         <option value="$PROJECT_DIR$/src/main/WeaponTypes/SecondaryWeaponType.java" />
+        <option value="$PROJECT_DIR$/src/FastDevelopment/AL.java" />
+        <option value="$PROJECT_DIR$/src/main/Config.java" />
       </list>
     </option>
   </component>
@@ -421,6 +415,11 @@
             <path>
               <item name="CS-GO-Commander" type="b2602c69:ProjectViewProjectNode" />
               <item name="CS-GO-Commander" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CS-GO-Commander" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CS-GO-Commander" type="462c0819:PsiDirectoryNode" />
+              <item name="commandfiles" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CS-GO-Commander" type="b2602c69:ProjectViewProjectNode" />
@@ -603,7 +602,7 @@
       <workItem from="1544559832228" duration="6685000" />
       <workItem from="1545229444164" duration="4778000" />
       <workItem from="1545241580449" duration="5295000" />
-      <workItem from="1545308940838" duration="1257000" />
+      <workItem from="1545308940838" duration="2670000" />
     </task>
     <servers />
   </component>
@@ -640,11 +639,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26389000" />
+    <option name="totallyTimeSpent" value="27802000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18869936" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -656,7 +654,7 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.27099237" />
-      <window_info active="true" anchor="bottom" x="0" y="370" width="1604" height="120" id="Run" order="2" visible="true" weight="0.31344903" />
+      <window_info anchor="bottom" x="0" y="370" width="1604" height="120" id="Run" order="2" weight="0.31344903" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3994911" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -782,13 +780,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/commandfiles/aim_map_exec_deagle_HSonly.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" selection-start-line="19" selection-end-line="19" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/WeaponTypes/UtilityType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -875,13 +866,6 @@
     <entry file="file://$PROJECT_DIR$/src/FastDevelopment/propertiesBACKUP.ini">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FastDevelopment/AL.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="63" column="65" selection-start-line="63" selection-start-column="42" selection-end-line="63" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/FastDevelopment/properties.ini">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -895,21 +879,6 @@
           <caret column="24" selection-start-column="24" selection-end-column="24" />
           <folding>
             <element signature="method#getInstance#0;class#PropertiesFetch#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="137" lean-forward="true" selection-start-line="137" selection-end-line="137" />
-          <folding>
-            <element signature="method#readConfigFile#0;class#Config#0" />
-            <element signature="method#parseString#0;class#Config#0" />
-            <element signature="method#getCommand#0;class#Config#0" />
-            <element signature="method#getCommandKeys#0;class#Config#0" />
-            <element signature="method#readFile#0;class#Config#0" />
-            <element signature="method#toString#0;class#Config#0" />
           </folding>
         </state>
       </provider>
@@ -948,9 +917,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/WeaponTypes/PrimaryWeaponType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="4" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/WeaponTypes/SecondaryWeaponType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/FastDevelopment/SimpleCommanding.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
+        <state relative-caret-position="619">
           <caret line="89" column="29" selection-start-line="89" selection-start-column="29" selection-end-line="89" selection-end-column="29" />
           <folding>
             <element signature="method#getInstance#0;class#SimpleCommanding#0" />
@@ -961,17 +944,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/WeaponTypes/PrimaryWeaponType.java">
+    <entry file="file://$PROJECT_DIR$/commandfiles/aim_map_exec_deagle_HSonly.cfg">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="4" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="13" />
+        <state relative-caret-position="323">
+          <caret line="19" selection-start-line="19" selection-end-line="19" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/WeaponTypes/SecondaryWeaponType.java">
+    <entry file="file://$PROJECT_DIR$/src/FastDevelopment/AL.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+        <state relative-caret-position="170">
+          <caret line="21" column="103" selection-start-line="21" selection-start-column="103" selection-end-line="21" selection-end-column="103" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Config.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="636">
+          <caret line="236" lean-forward="true" selection-start-line="236" selection-end-line="236" />
+          <folding>
+            <element signature="e#1284#1292#0" />
+            <element signature="method#getDefaultConfig#0;class#Config#0" />
+            <element signature="method#getDefaultConfigIni#0;class#Config#0" />
+            <element signature="method#readConfigFile#0;class#Config#0" />
+            <element signature="method#parseString#0;class#Config#0" />
+            <element signature="method#getCommand#0;class#Config#0" />
+            <element signature="method#getCommandKeys#0;class#Config#0" />
+            <element signature="method#readFile#0;class#Config#0" />
+            <element signature="method#collapseCommands#0;class#Config#0" />
+            <element signature="method#clusterCommands#0;class#Config#0" />
+          </folding>
         </state>
       </provider>
     </entry>

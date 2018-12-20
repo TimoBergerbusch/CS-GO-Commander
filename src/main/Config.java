@@ -16,7 +16,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Properties;
+import java.util.List;
 
 public class Config {
 
@@ -100,7 +100,8 @@ public class Config {
         for (int i = 0; i < stringCommands.length; i++) {
             stringCommands[i] = stringCommands[i].trim();
 
-            commands.add(readCommand(stringCommands[i]));
+            if (!stringCommands[i].startsWith("//"))
+                commands.add(readCommand(stringCommands[i]));
         }
 
         return new Config(commands);
@@ -111,6 +112,8 @@ public class Config {
     }
 
     public static Command readCommand(@NotNull String row) {
+        if (row.startsWith("//"))
+            return null;
         String[] commandparts = row.split(" ");
         Command cmd = null;
 
@@ -185,5 +188,72 @@ public class Config {
             sb.append(cmd.getCommand()).append("\n");
         }
         return sb.toString();
+    }
+
+    public String toPrettyString() {
+        ArrayList<Command> basicBeauty = this.clusterCommands(new String[]{"mp_do_warmup_period", "mp_warmup_duration",
+                "mp_halftime_duration", "mp_halftime", "mp_maxrounds", "mp_roundtime", "mp_maxmoney", "mp_startmoney",
+                "mp_freezetime", "mp_buytime", "mp_buy_anywhere", "mp_limitteams", "mp_autoteambalance",});
+        ArrayList<Command> modeBeauty = this.clusterCommands(new String[]{"mp_free_armor", "sv_infinite_ammo",
+                "ammo_grenade_limit_total", "mp_buy_allow_grenades", "mp_teammates_are_enemies",
+                "mp_damage_headshot_only", "mp_death_drop_gun", "sv_showimpacts", "sv_grenade_trajectory",});
+        ArrayList<Command> weaponBeauty = this.clusterCommands(new String[]{"mp_t_default_primary", "mp_ct_default_primary", "mp_t_default_secondary", "mp_ct_default_secondary"});
+        ArrayList<Command> rest = this.collapseCommands(basicBeauty, modeBeauty, weaponBeauty);
+
+        StringBuilder sb = new StringBuilder();
+        // HEADER
+        sb.append("//###########################################################//").append("\n");
+        sb.append("//############### Produced by CS-GO Commander ###############//").append("\n");
+        sb.append("//################# - by Timo Bergerbusch - #################//").append("\n");
+        sb.append("//###########################################################//").append("\n");
+
+        // General Commands
+        sb.append("//***********************************************************//").append("\n");
+        sb.append("//***************      General  Commands      ***************//").append("\n");
+        sb.append("//***********************************************************//").append("\n");
+        for (Command cmd : basicBeauty)
+            sb.append(cmd.getCommand()).append("\n");
+
+        // Mode Commands
+        sb.append("//***********************************************************//").append("\n");
+        sb.append("//***************      Gamemode Commands      ***************//").append("\n");
+        sb.append("//***********************************************************//").append("\n");
+        for (Command cmd : modeBeauty)
+            sb.append(cmd.getCommand()).append("\n");
+
+        // weapon Commands
+        sb.append("//***********************************************************//").append("\n");
+        sb.append("//***************       Weapon Commands       ***************//").append("\n");
+        sb.append("//***********************************************************//").append("\n");
+        for (Command cmd : weaponBeauty)
+            sb.append(cmd.getCommand()).append("\n");
+
+        // other Commands
+        sb.append("//***********************************************************//").append("\n");
+        sb.append("//***************       Other  Commands       ***************//").append("\n");
+        sb.append("//***********************************************************//").append("\n");
+        for (Command cmd : rest)
+            sb.append(cmd.getCommand()).append("\n");
+
+        return sb.toString();
+    }
+
+    private ArrayList<Command> collapseCommands(ArrayList<Command> basicBeauty, ArrayList<Command> modeBeauty, ArrayList<Command> weaponBeauty) {
+        ArrayList<Command> rest = new ArrayList<>();
+        for (Command cmd : commands) {
+            if (!basicBeauty.contains(cmd) && !modeBeauty.contains(cmd) && !weaponBeauty.contains(cmd))
+                rest.add(cmd);
+        }
+        return rest;
+    }
+
+    private ArrayList<Command> clusterCommands(String[] strings) {
+        List<String> keys = Arrays.asList(strings);
+        ArrayList<Command> list = new ArrayList<>();
+        for (Command cmd : commands) {
+            if (keys.contains(cmd.getKey()))
+                list.add(cmd);
+        }
+        return list;
     }
 }

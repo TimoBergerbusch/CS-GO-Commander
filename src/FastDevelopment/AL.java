@@ -19,7 +19,7 @@ public class AL implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         View v = View.getView();
         if (e.getSource() == v.getBtn_produceCommands()) {
-            v.getCommandsOuput().setText(SimpleCommanding.getInstance().createConfig().toString());
+            v.getCommandsOuput().setText(SimpleCommanding.getInstance().createConfig().toPrettyString());
         } else if (e.getSource() == v.getBtn_copyToClipboard()) {
             StringSelection stringSelection = new StringSelection(v.getCommandsOuput().getText());
             Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
