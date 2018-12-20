@@ -2,7 +2,6 @@ package FastDevelopment;
 
 import org.ini4j.Ini;
 
-import java.io.File;
 import java.io.IOException;
 
 public class PropertiesFetch {
@@ -22,9 +21,12 @@ public class PropertiesFetch {
     }
 
     private void load() {
-        File prop = new File(System.getProperty("user.dir") + "\\src\\FastDevelopment\\properties.ini");
+//        File prop = new File(System.getProperty("user.dir") + "\\csgo-commander " + View.VERSION + ".jar\\FastDevelopment\\properties.ini");
+//        File prop = new File(System.getProperty("user.dir") + "\\src\\FastDevelopment\\properties.ini");
         try {
-            properties = new Ini(prop);
+//            System.out.println(this.getClass().getResourceAsStream("properties.ini"));
+            properties = new Ini(this.getClass().getResourceAsStream("properties.ini"));
+//            properties = new Ini(prop);
         } catch (IOException e) {
             e.printStackTrace();
         }
